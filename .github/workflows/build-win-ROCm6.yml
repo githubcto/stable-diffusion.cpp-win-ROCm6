@@ -183,7 +183,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ env.BRANCH_NAME }}-${{ steps.commit.outputs.short }}
+          tag_name: ${{ env.BRANCH_NAME }}-${{ steps.commit.outputs.short }}-ROCm6
 
       - name: Upload release
         id: upload_release
