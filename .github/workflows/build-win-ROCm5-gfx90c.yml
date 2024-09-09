@@ -1,4 +1,4 @@
-name: CI
+name: CI for gfx90c
 
 on:
   workflow_dispatch: # allows manual triggering
@@ -90,7 +90,7 @@ jobs:
           ls $env:ROCM_PATH
           ls $env:ROCM_PATH\bin
           ls $env:ROCM_PATH\bin\rocblas\library
-          Expand-Archive -Path 'ROCm\ROCmLibs-gfx90c.zip' -DestinationPath 'extracted'
+          Expand-Archive -Path 'ROCm\ROCm5Libs-gfx90c.zip' -DestinationPath 'extracted'
           ls "extracted"
           robocopy "extracted" $env:ROCM_PATH\bin /s
           robocopy "extracted" $env:ROCM_PATH\bin rocblas.dll
@@ -144,24 +144,6 @@ jobs:
             throw "Can't find stable-diffusion.dll"
           }
           7z a sd-${{ env.BRANCH_NAME }}-${{ steps.commit.outputs.short }}-bin-win-${{ matrix.build }}-x64.zip $filePath
-
-      - name: Copy and pack rocm5 runtime
-        id: pack_rocm5
-        if: ${{ ( github.event_name == 'push' && github.ref == 'refs/heads/master' && matrix.build == 'rocm5.5-gfx90c' ) || github.event.inputs.create_release == 'true' }}
-        run: |
-          echo "rocm5.5 location: $env:ROCM_PATH"
-          $dst='.\build\bin\rocm5\'
-          robocopy "$env:ROCM_PATH\bin" $dst rocblas.dll hipblas.dll libhipsparse.dll
-          robocopy "$env:ROCM_PATH\bin\rocblas" $dst\rocblas /s /e
-          7z a rocm5-sd-bin-win-rocm5-gfx90c-x64.zip $dst\*
-
-      - name: Upload rocm5 runtime
-        if: ${{ ( github.event_name == 'push' && github.ref == 'refs/heads/master' && matrix.build == 'rocm5.5-gfx90c' ) || github.event.inputs.create_release == 'true' }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: sd-rocm5-sd-bin-win-rocm5-gfx90c-x64.zip
-          path: |
-            rocm5-sd-bin-win-rocm5-gfx90c-x64.zip
 
       - name: Upload artifacts
         if: ${{ ( github.event_name == 'push' && github.ref == 'refs/heads/master' ) || github.event.inputs.create_release == 'true' }}
