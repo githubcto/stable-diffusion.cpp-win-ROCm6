@@ -940,7 +940,7 @@ protected:
 
     std::map<struct ggml_tensor*, const void*> backend_tensor_data_map;
 
-    ggml_type wtype        = GGML_TYPE_F32;
+    ggml_type wtype        = GGML_TYPE_F16;
     ggml_backend_t backend = NULL;
 
     void alloc_params_ctx() {
@@ -1016,7 +1016,7 @@ protected:
 public:
     virtual std::string get_desc() = 0;
 
-    GGMLRunner(ggml_backend_t backend, ggml_type wtype = GGML_TYPE_F32)
+    GGMLRunner(ggml_backend_t backend, ggml_type wtype = GGML_TYPE_F16)
         : backend(backend), wtype(wtype) {
         alloc_params_ctx();
     }
@@ -1212,7 +1212,7 @@ protected:
 
     void init_params(struct ggml_context* ctx, ggml_type wtype) {
         if (in_features % ggml_blck_size(wtype) != 0 || force_f32) {
-            wtype = GGML_TYPE_F32;
+            wtype = GGML_TYPE_F16;
         }
         params["weight"] = ggml_new_tensor_2d(ctx, wtype, in_features, out_features);
         if (bias) {
