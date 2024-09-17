@@ -10,6 +10,7 @@ on:
   push:
     branches:
       - master
+      - dev-f16
       - ci
     paths:
       [
@@ -46,9 +47,7 @@ jobs:
       matrix:
         include:
           - build: "rocm6.1"
-            defines: '-G Ninja -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DSD_HIPBLAS=ON -DCMAKE_BUILD_TYPE=Release -DAMDGPU_TARGETS="gfx1100;gfx1101;gfx1102;gfx1030;gfx906" -DSD_BUILD_SHARED_LIBS=ON'
-          - build: "rocm6.1SD_FAST_SOFTMAX"
-            defines: '-G Ninja -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DSD_HIPBLAS=ON -DSD_FAST_SOFTMAX=ON -DCMAKE_BUILD_TYPE=Release -DAMDGPU_TARGETS="gfx1100;gfx1101;gfx1102;gfx1030;gfx906" -DSD_BUILD_SHARED_LIBS=ON'
+            defines: '-G Ninja -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DSD_HIPBLAS=ON -DCMAKE_BUILD_TYPE=Release -DAMDGPU_TARGETS="gfx1030" -DSD_BUILD_SHARED_LIBS=ON'
     steps:
       - name: Clone
         id: checkout
