@@ -110,12 +110,10 @@ jobs:
 
       - name: Get commit hash
         id: commit
-        if: ${{ ( github.event_name == 'push' && github.ref == 'refs/heads/master' ) || github.event.inputs.create_release == 'true' }}
         uses: pr-mpt/actions-commit-hash@v2
 
       - name: Pack artifacts
         id: pack_artifacts
-        if: ${{ ( github.event_name == 'push' && github.ref == 'refs/heads/master' ) || github.event.inputs.create_release == 'true' }}
         run: |
           $filePath = ".\build\bin\Release\*"
           if (Test-Path $filePath) {
