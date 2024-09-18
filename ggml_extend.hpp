@@ -1214,7 +1214,7 @@ protected:
         wtype = GGML_TYPE_F16;
         params["weight"] = ggml_new_tensor_2d(ctx, wtype, in_features, out_features);
         if (bias) {
-            params["bias"] = ggml_new_tensor_1d(ctx, GGML_TYPE_F16, out_features);
+            params["bias"] = ggml_new_tensor_1d(ctx, GGML_TYPE_F32, out_features);
         }
     }
 
