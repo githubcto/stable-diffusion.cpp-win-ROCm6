@@ -10,7 +10,7 @@ on:
   push:
     branches:
       - master
-      - dev-f16
+      - dev-f1
       - ci
     paths:
       [
