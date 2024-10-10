@@ -186,7 +186,7 @@ void print_usage(int argc, const char* argv[]) {
     printf("  --normalize-input                  normalize PHOTOMAKER input id images\n");
     printf("  --upscale-model [ESRGAN_PATH]      path to esrgan model. Upscale images after generate, just RealESRGAN_x4plus_anime_6B supported by now.\n");
     printf("  --upscale-repeats                  Run the ESRGAN upscaler this many times (default 1)\n");
-    printf("  --type [TYPE]                      weight type (f32, f16, q4_0, q4_1, q5_0, q5_1, q8_0, q2_k, q3_k, q4_k)\n");
+    printf("  --type [TYPE]                      weight type (f32, f16, q4_0, q4_1, q5_0, q5_1, q8_0, q8_1, q2_k, q3_k, q4_k, q5_k, q6_k, q8_k, iq2_xxs, iq2_xs, iq3_xxs, iq1_s, iq4_nl, iq3_s, iq2_s, iq4_xs, i8, i16, i32, i64, f64, iq1_m, bf16, q4_0_4_4, q4_0_4_8, q4_0_8_8)\n");
     printf("                                     If not specified, the default is the type of the weight file.\n");
     printf("  --lora-model-dir [DIR]             lora model directory\n");
     printf("  -i, --init-img [IMAGE]             path to the input image, required by img2img\n");
@@ -336,14 +336,58 @@ void parse_args(int argc, const char** argv, SDParams& params) {
                 params.wtype = SD_TYPE_Q5_1;
             } else if (type == "q8_0") {
                 params.wtype = SD_TYPE_Q8_0;
+            } else if (type == "q8_1") {
+                params.wtype = SD_TYPE_Q8_1;
             } else if (type == "q2_k") {
                 params.wtype = SD_TYPE_Q2_K;
             } else if (type == "q3_k") {
                 params.wtype = SD_TYPE_Q3_K;
             } else if (type == "q4_k") {
                 params.wtype = SD_TYPE_Q4_K;
+            } else if (type == "q5_k") {
+                params.wtype = SD_TYPE_Q5_K;
+            } else if (type == "q6_k") {
+                params.wtype = SD_TYPE_Q6_K;
+            } else if (type == "q8_k") {
+                params.wtype = SD_TYPE_Q8_K;
+            } else if (type == "iq2_xxs") {
+                params.wtype = SD_TYPE_IQ2_XXS;
+            } else if (type == "iq2_xs") {
+                params.wtype = SD_TYPE_IQ2_XS;
+            } else if (type == "iq3_xxs") {
+                params.wtype = SD_TYPE_IQ3_XXS;
+            } else if (type == "iq1_s") {
+                params.wtype = SD_TYPE_IQ1_S;
+            } else if (type == "iq4_nl") {
+                params.wtype = SD_TYPE_IQ4_NL;
+            } else if (type == "iq3_s") {
+                params.wtype = SD_TYPE_IQ3_S;
+            } else if (type == "iq2_s") {
+                params.wtype = SD_TYPE_IQ2_S;
+            } else if (type == "iq4_xs") {
+                params.wtype = SD_TYPE_IQ4_XS;
+            } else if (type == "i8") {
+                params.wtype = SD_TYPE_I8;
+            } else if (type == "i16") {
+                params.wtype = SD_TYPE_I16;
+            } else if (type == "i32") {
+                params.wtype = SD_TYPE_I32;
+            } else if (type == "i64") {
+                params.wtype = SD_TYPE_I64;
+            } else if (type == "f64") {
+                params.wtype = SD_TYPE_F64;
+            } else if (type == "iq1_m") {
+                params.wtype = SD_TYPE_IQ1_M;
+            } else if (type == "bf16") {
+                params.wtype = SD_TYPE_BF16;
+            } else if (type == "q4_0_4_4") {
+                params.wtype = SD_TYPE_Q4_0_4_4;
+            } else if (type == "q4_0_4_8") {
+                params.wtype = SD_TYPE_Q4_0_4_8;
+            } else if (type == "q4_0_8_8") {
+                params.wtype = SD_TYPE_Q4_0_8_8;
             } else {
-                fprintf(stderr, "error: invalid weight format %s, must be one of [f32, f16, q4_0, q4_1, q5_0, q5_1, q8_0, q2_k, q3_k, q4_k]\n",
+                fprintf(stderr, "error: invalid weight format %s, must be one of [f32, f16, q4_0, q4_1, q5_0, q5_1, q8_0, q8_1, q2_k, q3_k, q4_k, q5_k, q6_k, q8_k, iq2_xxs, iq2_xs, iq3_xxs, iq1_s, iq4_nl, iq3_s, iq2_s, iq4_xs, i8, i16, i32, i64, f64, iq1_m, bf16, q4_0_4_4, q4_0_4_8, q4_0_8_8]\n",
                         type.c_str());
                 exit(1);
             }
