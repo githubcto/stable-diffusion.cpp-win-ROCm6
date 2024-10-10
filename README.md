@@ -212,7 +212,7 @@ arguments:
   --normalize-input                  normalize PHOTOMAKER input id images
   --upscale-model [ESRGAN_PATH]      path to esrgan model. Upscale images after generate, just RealESRGAN_x4plus_anime_6B supported by now.
   --upscale-repeats                  Run the ESRGAN upscaler this many times (default 1)
-  --type [TYPE]                      weight type (f32, f16, q4_0, q4_1, q5_0, q5_1, q8_0, q2_k, q3_k, q4_k)
+  --type [TYPE]                      weight type (f32, f16, q4_0, q4_1, q5_0, q5_1, q8_0, q8_1, q2_k, q3_k, q4_k, q5_k, q6_k, q8_k, iq2_xxs, iq2_xs, iq3_xxs, iq1_s, iq4_nl, iq3_s, iq2_s, iq4_xs, i8, i16, i32, i64, f64, iq1_m, bf16, q4_0_4_4, q4_0_4_8, q4_0_8_8)
                                      If not specified, the default is the type of the weight file.
   --lora-model-dir [DIR]             lora model directory
   -i, --init-img [IMAGE]             path to the input image, required by img2img
