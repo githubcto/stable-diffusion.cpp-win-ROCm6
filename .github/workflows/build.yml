@@ -52,7 +52,7 @@ jobs:
 
       - name: Update submodule to latest commit
         run: |
-          git submodule update --remote --merge
+          git submodule update --remote --merge --allow-unrelated-histories
 
       - name: Commit submodule update
         run: |
@@ -114,7 +114,7 @@ jobs:
 
       - name: Update submodule to latest commit
         run: |
-          git submodule update --remote --merge
+          git submodule update --remote --merge --allow-unrelated-histories
 
       - name: Commit submodule update
         run: |
@@ -196,7 +196,7 @@ jobs:
 
       - name: Update submodule to latest commit
         run: |
-          git submodule update --remote --merge
+          git submodule update --remote --merge --allow-unrelated-histories
 
       - name: Commit submodule update
         run: |
@@ -323,7 +323,7 @@ jobs:
 
       - name: Update submodule to latest commit
         run: |
-          git submodule update --remote --merge
+          git submodule update --remote --merge --allow-unrelated-histories
 
       - name: Commit submodule update
         run: |
@@ -447,7 +447,7 @@ jobs:
 
       - name: Update submodule to latest commit
         run: |
-          git submodule update --remote --merge
+          git submodule update --remote --merge --allow-unrelated-histories
 
       - name: Commit submodule update
         run: |
