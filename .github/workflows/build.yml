@@ -57,7 +57,7 @@ jobs:
       - name: Commit submodule update
         run: |
           git add .
-          git commit -m
+          git commit -m "Update submodule to latest commit"
 
       - name: Dependencies
         id: depends
@@ -119,7 +119,7 @@ jobs:
       - name: Commit submodule update
         run: |
           git add .
-          git commit -m
+          git commit -m "Update submodule to latest commit"
 
       - name: Dependencies
         id: depends
@@ -201,7 +201,7 @@ jobs:
       - name: Commit submodule update
         run: |
           git add .
-          git commit -m
+          git commit -m "Update submodule to latest commit"
 
       - name: Install cuda-toolkit
         id: cuda-toolkit
@@ -328,7 +328,7 @@ jobs:
       - name: Commit submodule update
         run: |
           git add .
-          git commit -m
+          git commit -m "Update submodule to latest commit"
 
       - name: Install cuda-toolkit
         id: cuda-toolkit
@@ -452,7 +452,7 @@ jobs:
       - name: Commit submodule update
         run: |
           git add .
-          git commit -m
+          git commit -m "Update submodule to latest commit"
 
       - name: Install AMD HIP SDK 6.1
         run: |
