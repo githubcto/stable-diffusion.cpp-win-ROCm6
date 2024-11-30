@@ -10,6 +10,7 @@ on:
   push:
     branches:
       - master
+      - ROCm6
       - ci
     paths:
       [
