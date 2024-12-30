@@ -134,8 +134,8 @@ jobs:
           clang --version
           clang++ --version
 
-      - name: List paths
-        if: runner.os == 'Windows'
+      - name: copy ROCmLibs
+        if: ${{ matrix.build == 'gfx90cHIP624' }}
         shell: powershell
         run: |
           $Env:ROCm_PATH = "C:\Program Files\AMD\ROCm\6.2"
@@ -144,13 +144,6 @@ jobs:
           echo "ROCM_PATH=C:\Program Files\AMD\ROCm\6.2" >> $GITHUB_ENV
           echo "HIP_PATH=C:\Program Files\AMD\ROCm\6.2" >> $GITHUB_ENV
           echo "PATH=C:\Program Files\AMD\ROCm\6.2\bin;$Env:PATH" >> $GITHUB_ENV
-          ls $env:ROCM_PATH
-          ls $env:ROCM_PATH\bin
-
-      - name: copy ROCmLibs
-        if: ${{ matrix.build == 'gfx90cHIP624' }}
-        shell: powershell
-        run: |
           ls $env:ROCM_PATH
           ls $env:ROCM_PATH\bin
           ls $env:ROCM_PATH\bin\rocblas\library
