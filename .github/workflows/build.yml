@@ -361,11 +361,13 @@ jobs:
             echo "Exists at path $filePath"
             Copy-Item ggml/LICENSE .\build\bin\Release\ggml.txt
             Copy-Item LICENSE .\build\bin\Release\stable-diffusion.cpp.txt
+            Copy-Item ROCm/README-RADEON.txt .\build\bin\Release\README-RADEON.txt
             Copy-Item ROCm/generateSD-ROCm6.bat .\build\bin\Release\generateSD-ROCm6.bat
             Copy-Item ROCm/generateSDXL-ROCm6.bat .\build\bin\Release\generateSDXL-ROCm6.bat
             Copy-Item ROCm/generateSDXL-HIP_VISIBLE_DEVICES0-ROCm6.bat .\build\bin\Release\generateSDXL-HIP_VISIBLE_DEVICES0-ROCm6.bat
             Copy-Item ROCm/generateSDXL-HIP_VISIBLE_DEVICES1-ROCm6.bat .\build\bin\Release\generateSDXL-HIP_VISIBLE_DEVICES1-ROCm6.bat
             Copy-Item ROCm/generateFLUX-ROCm6.bat .\build\bin\Release\generateFLUX-ROCm6.bat
+            Copy-Item ROCm/generateSD35.bat .\build\bin\Release\generateSD35.bat
             Copy-Item ROCm/conveert2gguf-ROCm6.bat .\build\bin\Release\conveert2gguf-ROCm6.bat
             Copy-Item ROCm/startSDcppGUIwrapperSAMPLE-ROCm6.bat .\build\bin\Release\startSDcppGUIwrapperSAMPLE-ROCm6.bat
           } elseif (Test-Path ".\build\bin\stable-diffusion.dll") {
@@ -373,11 +375,13 @@ jobs:
             echo "Exists at path $filePath"
             Copy-Item ggml/LICENSE .\build\bin\ggml.txt
             Copy-Item LICENSE .\build\bin\stable-diffusion.cpp.txt
+            Copy-Item ROCm/README-RADEON.txt .\build\bin\README-RADEON.txt
             Copy-Item ROCm/generateSD-ROCm6.bat .\build\bin\generateSD-ROCm6.bat
             Copy-Item ROCm/generateSDXL-ROCm6.bat .\build\bin\generateSDXL-ROCm6.bat
             Copy-Item ROCm/generateSDXL-HIP_VISIBLE_DEVICES0-ROCm6.bat .\build\bin\generateSDXL-HIP_VISIBLE_DEVICES0-ROCm6.bat
             Copy-Item ROCm/generateSDXL-HIP_VISIBLE_DEVICES1-ROCm6.bat .\build\bin\generateSDXL-HIP_VISIBLE_DEVICES1-ROCm6.bat
             Copy-Item ROCm/generateFLUX-ROCm6.bat .\build\bin\generateFLUX-ROCm6.bat
+            Copy-Item ROCm/generateSD35.bat .\build\bin\generateSD35.bat
             Copy-Item ROCm/conveert2gguf-ROCm6.bat .\build\bin\conveert2gguf-ROCm6.bat
             Copy-Item ROCm/startSDcppGUIwrapperSAMPLE-ROCm6.bat .\build\bin\startSDcppGUIwrapperSAMPLE-ROCm6.bat
           } else {
@@ -477,11 +481,13 @@ jobs:
             echo "Exists at path $filePath"
             Copy-Item ggml/LICENSE .\build\bin\Release\ggml.txt
             Copy-Item LICENSE .\build\bin\Release\stable-diffusion.cpp.txt
+            Copy-Item ROCm/README-RADEON.txt .\build\bin\Release\README-RADEON.txt
             Copy-Item ROCm/generateSD-ROCm6.bat .\build\bin\Release\generateSD-ROCm6.bat
             Copy-Item ROCm/generateSDXL-ROCm6.bat .\build\bin\Release\generateSDXL-ROCm6.bat
             Copy-Item ROCm/generateSDXL-HIP_VISIBLE_DEVICES0-ROCm6.bat .\build\bin\Release\generateSDXL-HIP_VISIBLE_DEVICES0-ROCm6.bat
             Copy-Item ROCm/generateSDXL-HIP_VISIBLE_DEVICES1-ROCm6.bat .\build\bin\Release\generateSDXL-HIP_VISIBLE_DEVICES1-ROCm6.bat
             Copy-Item ROCm/generateFLUX-ROCm6.bat .\build\bin\Release\generateFLUX-ROCm6.bat
+            Copy-Item ROCm/generateSD35.bat .\build\bin\Release\generateSD35.bat
             Copy-Item ROCm/conveert2gguf-ROCm6.bat .\build\bin\Release\conveert2gguf-ROCm6.bat
             Copy-Item ROCm/startSDcppGUIwrapperSAMPLE-ROCm6.bat .\build\bin\Release\startSDcppGUIwrapperSAMPLE-ROCm6.bat
           } elseif (Test-Path ".\build\bin\stable-diffusion.dll") {
@@ -489,11 +495,13 @@ jobs:
             echo "Exists at path $filePath"
             Copy-Item ggml/LICENSE .\build\bin\ggml.txt
             Copy-Item LICENSE .\build\bin\stable-diffusion.cpp.txt
+            Copy-Item ROCm/README-RADEON.txt .\build\bin\README-RADEON.txt
             Copy-Item ROCm/generateSD-ROCm6.bat .\build\bin\generateSD-ROCm6.bat
             Copy-Item ROCm/generateSDXL-ROCm6.bat .\build\bin\generateSDXL-ROCm6.bat
             Copy-Item ROCm/generateSDXL-HIP_VISIBLE_DEVICES0-ROCm6.bat .\build\bin\generateSDXL-HIP_VISIBLE_DEVICES0-ROCm6.bat
             Copy-Item ROCm/generateSDXL-HIP_VISIBLE_DEVICES1-ROCm6.bat .\build\bin\generateSDXL-HIP_VISIBLE_DEVICES1-ROCm6.bat
             Copy-Item ROCm/generateFLUX-ROCm6.bat .\build\bin\generateFLUX-ROCm6.bat
+            Copy-Item ROCm/generateSD35.bat .\build\bin\generateSD35.bat
             Copy-Item ROCm/conveert2gguf-ROCm6.bat .\build\bin\conveert2gguf-ROCm6.bat
             Copy-Item ROCm/startSDcppGUIwrapperSAMPLE-ROCm6.bat .\build\bin\startSDcppGUIwrapperSAMPLE-ROCm6.bat
           } else {
